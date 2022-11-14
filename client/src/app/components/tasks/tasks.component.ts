@@ -93,11 +93,8 @@ export class TasksComponent implements OnInit {
       this.currentTasksProgress = progress;
       this.currentTasksDone = done;
     });
-    console.log(this.currentTasksTodo);
   }
   updateTask(item: Task, task: HTMLInputElement) {
-    console.log(task);
-    console.log(item, task.value);
     const obj = {
       taskId: item._id,
       taskName: task.value,
@@ -140,11 +137,9 @@ export class TasksComponent implements OnInit {
       taskId: item._id,
       archived: !item.archived,
     };
-    console.log(obj);
     this.tasksService
       .archiveCurrentTask(this.user.accessToken, obj)
       .subscribe((res: Answer) => {
-        console.log(res);
         if (res.status === 200) {
           this.tasksService
             .getBoardTasks(this.user.accessToken, this.currentBoard._id)

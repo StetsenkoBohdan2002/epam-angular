@@ -4,7 +4,6 @@ import { Board } from 'src/app/models/board.model';
 @Pipe({ name: 'sortBy' })
 export class SortByPipe implements PipeTransform {
   transform(value: Board[], sort: keyof Board, order: string = ''):Board[]{
-    console.log(value)
     if (!value || !sort) {
       return value;
     }

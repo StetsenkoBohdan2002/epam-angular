@@ -43,7 +43,6 @@ export class AddBoardComponent implements OnInit {
         });
       }
     });
-    console.log(this.user);
   }
   showModal(event: boolean | undefined) {
     this.openModal.emit(event);

@@ -33,7 +33,6 @@ export class HeaderComponent implements OnInit {
       if (value) {
         this.store$.pipe(select(getAuthData)).subscribe((value) => {
           if (value) {
-            console.log(value)
             this.user = value;
           }
         });

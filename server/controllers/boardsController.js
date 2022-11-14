@@ -28,7 +28,6 @@ export const getUserBoardById = async (req, res, next) => {
 
 export const deleteUserBoard = async (req, res, next) => {
   const board = await Board.findById(req.params.id);
-  console.log(board)
   if (!board) {
     next(createError(400));
   }
@@ -40,7 +39,6 @@ export const deleteUserBoard = async (req, res, next) => {
 };
 
 export const updateBoard = async (req, res, next) => {
-   console.log(1)
   const board = Board.findById(req.params.id);
   if (!board || Object.keys(req.body).length < 1) {
     next(createError(400));

@@ -13,7 +13,6 @@ export class BoardsService {
   boards: Board[] = [];
   constructor(private http: HttpClient) {}
   setBoards(arr: Board[]) {
-    console.log(arr)
     localStorage.setItem('boards', JSON.stringify(arr));
     this.boards = arr;
     this.boardsStore.emit(this.boards.slice());
@@ -77,8 +76,6 @@ export class BoardsService {
     );
   }
   createNewBoard(user: User, form: FormGroup):Observable<Answer> {
-    console.log(user)
-    console.log(form)
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

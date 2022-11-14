@@ -5,7 +5,6 @@ import { createError } from '../createError.js';
 import Comment, { commentJoiSchema } from '../models/Comment.js';
 
 export const createCommentForTask = async (req, res, next) => {
-  console.log(req.body)
   const task = await Task.findById(req.body.taskId);
   if (!task) {
     next(createError(400));

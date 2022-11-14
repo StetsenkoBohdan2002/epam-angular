@@ -39,7 +39,6 @@ export class CommentsComponent implements OnInit, AfterViewInit {
     this.currentBoard = this.tasksService.getBoard();
     this.commentsList = this.commentsService.getComments();
 
-    console.log(this.currentBoard);
     this.task = this.tasksService.getTasks().filter((item: Task) => {
       this.currentId = this.route.snapshot.params['id'];
       return item._id === this.currentId;

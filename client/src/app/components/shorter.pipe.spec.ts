@@ -8,7 +8,6 @@ describe('ShorterPipe', () => {
   ];
   beforeEach(() => {});
   it('should transforms big sentence to shorter up to 10 characters', () => {
-    console.log(pipe.transform(words[1], 10));
     expect(pipe.transform(words[1], 10)).toBe('Contrary t...');
   });
   it('should not transforms small word', () => {

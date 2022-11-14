@@ -6,7 +6,6 @@ export const createTask = async (req, res, next) => {
   const obj = req.body;
   obj.userId = req.user.userId;
   taskJoiSchema.validateAsync(req.body);
-  console.log(obj);
   const board = await Board.findById(req.body.boardId);
   if (!board) {
     next(createError(400));
@@ -79,7 +78,6 @@ export const changeColor = async (req, res, next) => {
 };
 
 export const updateTask = async (req, res, next) => {
-  console.log(req.body);
   const task = await Task.findById(req.body.taskId);
   if (!task) {
     next(createError(400));
@@ -111,7 +109,6 @@ export const updateTaskArchived = async (req, res, next) => {
 };
 
 export const updateTaskStatus = async (req, res, next) => {
-  console.log(req.body);
   const task = await Task.findById(req.body.taskId);
   if (!task) {
     next(createError(400));

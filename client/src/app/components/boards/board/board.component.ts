@@ -37,7 +37,6 @@ export class BoardComponent implements OnInit {
   }
   deleteBoard(event: Event) {
     event.stopPropagation();
-    console.log(this.user.accessToken);
     this.boardsService
       .deleteBoard(this.user.accessToken, this.board._id)
       .subscribe((res: Answer) => {
